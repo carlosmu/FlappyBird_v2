@@ -6,11 +6,14 @@ public class Bird : MonoBehaviour
 {    
     private bool isDead = false; // Variable que guarda el valor de está vivo o muerto     
     private Rigidbody2D rb2d; // Variable que guarda el Rigidbody del pájaro
+    private Animator anim; // Referencia al animator
     [SerializeField] private float upForce = 200f; // Impulso del salto para arriba 
 
     void Awake()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        rb2d = GetComponent<Rigidbody2D>(); // Referencia al RigidBody
+        anim = GetComponent<Animator>(); // Referencia al animator
+
     }
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,7 @@ public class Bird : MonoBehaviour
         {
             rb2d.velocity = Vector2.zero; // Ponemos su velocidad en 0 antes del impulso
             rb2d.AddForce(Vector2.up * upForce); // Agregamos una fuerza, solo en Y (1), multiplicada por la variable
+            anim.SetTrigger("Flap"); // Activa el animator, estado "Flap".
         }    
         
     }
@@ -34,5 +38,6 @@ public class Bird : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         isDead = true; // Si colisiona con un collider, muere
+        anim.SetTrigger("Die");
     }
 }

@@ -43,5 +43,6 @@ public class Bird : MonoBehaviour
         // gameController.BirdDie(); Esto al final no lo usamos porque vamos a usar un Singleton.
         // Llamamos al singleton y al método "BirdDie".
         GameController.instance.BirdDie();
+        rb2d.velocity = Vector2.zero;
     }
 }

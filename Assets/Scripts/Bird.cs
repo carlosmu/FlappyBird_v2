@@ -8,6 +8,7 @@ public class Bird : MonoBehaviour
     private Rigidbody2D rb2d; // Variable que guarda el Rigidbody del pájaro
     private Animator anim; // Referencia al animator
     [SerializeField] private float upForce = 200f; // Impulso del salto para arriba 
+    //[SerializeField] GameController gameController;
 
     void Awake()
     {
@@ -39,5 +40,8 @@ public class Bird : MonoBehaviour
     {
         isDead = true; // Si colisiona con un collider, muere
         anim.SetTrigger("Die");
+        // gameController.BirdDie(); Esto al final no lo usamos porque vamos a usar un Singleton.
+        // Llamamos al singleton y al método "BirdDie".
+        GameController.instance.BirdDie();
     }
 }

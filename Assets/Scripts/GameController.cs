@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject gameOverText; // Referencia al texto de GameOver
     public bool gameOver; // Variable lógica para el Game Over
     public float scrollSpeed = -1.5f; // La velocidad de scroll. La ponemos acá porque a este script podemos acceder desde cualquier script.
+
+    private int score = 0; // Variable para guardar la puntuación
+
+    [SerializeField] Text scoreText; // Variable para referenciar el texto del Score
 
     private void Awake()
     {
@@ -29,10 +34,15 @@ public class GameController : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    // Método público para sumarle puntos al pájaro
+    public void BirdScore()
     {
-        
+        // Si perdimos, salir de la ejecución
+        if (gameOver) return;
+        // De lo contrario.. sumar 1 punto.
+        score++;
+        // E imprimir en el texto "Score " + el valor entero del puntaje.
+        scoreText.text = "Score: " + score;
     }
 
     // Update is called once per frame

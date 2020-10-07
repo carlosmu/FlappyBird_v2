@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
 
     [SerializeField] private GameObject gameOverText; // Referencia al texto de GameOver
     public bool gameOver; // Variable lógica para el Game Over
+    public float scrollSpeed = -1.5f; // La velocidad de scroll. La ponemos acá porque a este script podemos acceder desde cualquier script.
 
     private void Awake()
     {

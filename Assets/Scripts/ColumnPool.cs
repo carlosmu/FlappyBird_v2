@@ -10,10 +10,9 @@ public class ColumnPool : MonoBehaviour
     [SerializeField] private float columnMax = 1.3f; // Posición máxima para arriba de posicionamiento de las columnas
     private float spawnXPosition = 10; // La posición en X donde se spawnea
     private GameObject[] columns; // El array de columnas
-    private Vector2 objectPoolPosition = new Vector2(10,0); // La posición del Pool
+    private Vector2 objectPoolPosition = new Vector2(-10,0); // La posición del Pool
     private float timeSinceLastSpawned; // El tiempo acumulado
     [SerializeField] private float spawnRate = 2f; // La taza de spawneo (tiempo de demora)
-
     private int currentColumn = 0; // La columna actual. Es el índice dentro del array.
 
     // Start is called before the first frame update

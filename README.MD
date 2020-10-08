@@ -1,10 +1,11 @@
 # Flappy Bird v2
 Coding exercise based on Unity official learn resources.
 
-<!-- ![bloques](demo/bloques.jpg)
+<img src="demo/FlappyBird.jpg" width="600">
 <br><br>
-<img src="demo/bloques.gif" width="300"> -->
+<img src="demo/FlappyBird.gif" width="600">
 
+## Music and SFX
 Background music from PlayOnLoop.com
 Licensed under Creative Commons by Attribution 4.0
 

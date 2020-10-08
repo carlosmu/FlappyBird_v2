@@ -48,16 +48,6 @@ public class GameController : MonoBehaviour
         SoundSystem.instance.PlayCoin();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // Si GameOver es verdadero.. y presiono el click izq.. reanudar escena.
-        if(gameOver && Input.GetMouseButtonDown(0))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-    }
-
     public void BirdDie() // Método público para poder usarlo desde otros scripts
     {
         gameOverText.SetActive(true); // Cuando el pájaro muere, activar el Game Over

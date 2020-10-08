@@ -7,6 +7,7 @@ public class Bird : MonoBehaviour
     private bool isDead = false; // Variable que guarda el valor de está vivo o muerto     
     private Rigidbody2D rb2d; // Variable que guarda el Rigidbody del pájaro
     private Animator anim; // Referencia al animator
+    private RotateBird rotateBird; // Variable para asignar el script para luego desactivarlo
     [SerializeField] private float upForce = 200f; // Impulso del salto para arriba 
     //[SerializeField] GameController gameController;
 
@@ -14,6 +15,7 @@ public class Bird : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>(); // Referencia al RigidBody
         anim = GetComponent<Animator>(); // Referencia al animator
+        rotateBird = GetComponent<RotateBird>(); // Obtenemos la referencia al componente "RotateBird" (el script)
 
     }
 
@@ -36,6 +38,7 @@ public class Bird : MonoBehaviour
     {
         isDead = true; // Si colisiona con un collider, muere
         anim.SetTrigger("Die");
+        rotateBird.enabled = false; // Desactivamos el componente de la rotación una vez que muere (rotará por físicas)
         // gameController.BirdDie(); Esto al final no lo usamos porque vamos a usar un Singleton.
         // Llamamos al singleton y al método "BirdDie".
         GameController.instance.BirdDie();

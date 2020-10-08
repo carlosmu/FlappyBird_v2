@@ -9,7 +9,7 @@ public class Column : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            GameController.instance.BirdDie();
+            GameController.instance.BirdScore();
         }
     }
 }

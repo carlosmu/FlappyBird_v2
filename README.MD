@@ -2,9 +2,9 @@
 Coding exercise based on Unity official learn resources.
 
 <img src="demo/FlappyBird.jpg" width="600">
-<br><br>
+<br>
 <img src="demo/FlappyBirdUnity.jpg" width="600">
-<br><br>
+<br>
 <img src="demo/FlappyBird.gif" width="600">
 
 ## Music and SFX

@@ -16,11 +16,6 @@ public class Bird : MonoBehaviour
         anim = GetComponent<Animator>(); // Referencia al animator
 
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-                
-    }
 
     // Si no dice "private o public" quiere decir que es privada.
     void Update()
@@ -29,6 +24,7 @@ public class Bird : MonoBehaviour
         
         if (Input.GetMouseButton(0)) // Si está presionado el botón izquierdo del mouse
         {
+            SoundSystem.instance.PlayFlap(); // Instanciamos el evento que reproduce el sonido de Flap
             rb2d.velocity = Vector2.zero; // Ponemos su velocidad en 0 antes del impulso
             rb2d.AddForce(Vector2.up * upForce); // Agregamos una fuerza, solo en Y (1), multiplicada por la variable
             anim.SetTrigger("Flap"); // Activa el animator, estado "Flap".
@@ -44,5 +40,6 @@ public class Bird : MonoBehaviour
         // Llamamos al singleton y al método "BirdDie".
         GameController.instance.BirdDie();
         rb2d.velocity = Vector2.zero;
+        SoundSystem.instance.PlayHit(); // Instanciamos el evento que reproduce el sonido de Hit
     }
 }

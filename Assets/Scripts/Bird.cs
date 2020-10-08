@@ -24,7 +24,7 @@ public class Bird : MonoBehaviour
     {
         if (isDead) return; // Si está muerto, terminar la ejecución
         
-        if (Input.GetMouseButton(0)) // Si está presionado el botón izquierdo del mouse
+        if (Input.GetKeyDown(KeyCode.Mouse0)) // Si está presionado el botón izquierdo del mouse
         {
             SoundSystem.instance.PlayFlap(); // Instanciamos el evento que reproduce el sonido de Flap
             rb2d.velocity = Vector2.zero; // Ponemos su velocidad en 0 antes del impulso

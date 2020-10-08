@@ -775,13 +775,14 @@ GameObject:
   - component: {fileID: 914276752}
   - component: {fileID: 914276751}
   - component: {fileID: 914276750}
+  - component: {fileID: 914276753}
   m_Layer: 5
   m_Name: FlapToRestart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &914276749
 RectTransform:
   m_ObjectHideFlags: 0
@@ -857,6 +858,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914276748}
   m_CullTransparentMesh: 0
+--- !u!114 &914276753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914276748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f89824872a5b17c4ab968aff09968450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1066346103
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,6 +984,7 @@ GameObject:
   - component: {fileID: 1168237766}
   - component: {fileID: 1168237767}
   - component: {fileID: 1168237768}
+  - component: {fileID: 1168237769}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Player
@@ -1112,6 +1126,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1168237769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168237762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190beea75a9269d4e91e3507cc56dc07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDownVelocity: -15
+  maxDownAngle: -60
 --- !u!1 &1289732864
 GameObject:
   m_ObjectHideFlags: 0
@@ -1409,6 +1437,7 @@ GameObject:
   - component: {fileID: 1700364239}
   - component: {fileID: 1700364238}
   - component: {fileID: 1700364237}
+  - component: {fileID: 1700364240}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
@@ -1492,6 +1521,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700364235}
   m_CullTransparentMesh: 0
+--- !u!114 &1700364240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700364235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 893a634269bcf99429f4a5da0224593e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flapToRestart: {fileID: 914276748}
+  delay: 3
 --- !u!1 &1836118111
 GameObject:
   m_ObjectHideFlags: 0

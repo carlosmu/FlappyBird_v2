@@ -43,6 +43,9 @@ public class GameController : MonoBehaviour
         score++;
         // E imprimir en el texto "Score " + el valor entero del puntaje.
         scoreText.text = "Score: " + score;
+        // Recordar que para usar un singleton debemos usar .instance
+        // En este caso estamos instanciando este método desde SoundSystem
+        SoundSystem.instance.PlayCoin();
     }
 
     // Update is called once per frame

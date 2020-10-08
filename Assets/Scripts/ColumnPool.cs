@@ -22,8 +22,11 @@ public class ColumnPool : MonoBehaviour
 
         for (int i=0; i < columnPoolSize; i++) // Para i, si es menor que PoolSize, ejecutar y luego incrementar en 1
         {
-            columns[i] = Instantiate(columnPrefab, objectPoolPosition, Quaternion.identity); // En cada columna instanciar el prefab, la posición y rotación.
+            // En cada columna instanciar el prefab, la posición y rotación.
+            columns[i] = Instantiate(columnPrefab, objectPoolPosition, Quaternion.identity); 
         }
+        SpawnColumn();
+
     }
 
     // Update is called once per frame
@@ -34,18 +37,25 @@ public class ColumnPool : MonoBehaviour
         if(!GameController.instance.gameOver && timeSinceLastSpawned >= spawnRate) 
         {
             timeSinceLastSpawned = 0; // Asignar 0
-            // Una variable para guardar la posición en Y en cada caso, obtenida aleatoriamente
-            float spawnYPosition = Random.Range(columnMin,columnMax); 
-            // En el array Columns, a la columna actual, accedemos a su posición, le asignamos los valores en x e y
-            columns[currentColumn].transform.position = new Vector2(spawnXPosition, spawnYPosition); 
-            // En cada iteración le sumamos 1
-            currentColumn++;
-            // Y..si la columna actual es igual o mayor que el poolsize (en este caso 5), la ponemos en 1
-            // Recordar que el índice es 0, 1, 2, 3, 4
-            if(currentColumn >= columnPoolSize)
-            {
-                currentColumn = 0;
-            }
+            // Llamamos al método SpawnColumn
+            SpawnColumn();
+        }
+    }
+
+    // Para ser más prolijos nos trajimos todo este código desde el update a un método
+    private void SpawnColumn()
+    {
+        // Una variable para guardar la posición en Y en cada caso, obtenida aleatoriamente
+        float spawnYPosition = Random.Range(columnMin,columnMax); 
+        // En el array Columns, a la columna actual, accedemos a su posición, le asignamos los valores en x e y
+        columns[currentColumn].transform.position = new Vector2(spawnXPosition, spawnYPosition); 
+        // En cada iteración le sumamos 1
+        currentColumn++;
+        // Y..si la columna actual es igual o mayor que el poolsize (en este caso 5), la ponemos en 1
+        // Recordar que el índice es 0, 1, 2, 3, 4
+        if(currentColumn >= columnPoolSize)
+        {
+            currentColumn = 0;
         }
     }
 }

@@ -668,7 +668,7 @@ MonoBehaviour:
     type: 3}
   columnMin: -2
   columnMax: 1.5
-  spawnRate: 4
+  spawnRate: 3
 --- !u!1 &670886881
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ public class SoundSystem : MonoBehaviour
     private void PlayAudioClip(AudioClip audioClip) // Método para reducir código en los tres anteriores
     {
         audioSource.clip = audioClip; // Asigna el audioclip al audiosource
-        audioSource.Play(); // Ejecuta el audioclip
+        audioSource.PlayOneShot(audioClip, 1f); // Ejecuta el audioclip
     }
 
     private void OnDestroy()
